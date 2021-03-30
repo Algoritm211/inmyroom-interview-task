@@ -1,0 +1,107 @@
+
+
+.card {
+  height: 479px;
+  width: 204px;
+  transition: all;
+
+  //&:hover {
+  //  background: rgba(255, 188, 0, 0.1);
+  //}
+
+  &__image {
+    padding: 55px 21px;
+    background: #F4F2EE;
+    mix-blend-mode: normal;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    margin-right: 10px;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 18px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+
+    &__cell {
+      display: flex;
+      align-items: center;
+      height: 31px;
+      padding: 7px;
+      overflow: hidden;
+      white-space: nowrap;
+
+
+      &.gray {
+        background: #F4F2EE;
+      }
+    }
+
+    &.blank {
+      margin-top: 256px;
+      font-weight: 800;
+    }
+  }
+
+  &__buttons {
+    padding: 0 9px;
+    display: flex;
+    justify-content: space-between;
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 7px 20px;
+      cursor: pointer;
+    }
+
+    &-like {
+      width: 51px;
+      height: 35px;
+      background: #FFFFFF;
+      border: 2px solid #FF9F9F;
+      box-sizing: border-box;
+      border-radius: 4px;
+      i {
+        color: #FF9F9F;
+      }
+    }
+
+    &-buy {
+      background: #009900;
+      border-radius: 4px;
+      color: white;
+
+      i {
+        margin-right: 10px;
+      }
+    }
+
+  }
+}
+
+.fadeout {
+  position:relative;
+  color: #000;
+  background: white;
+}
+
+.fadeout:after {
+  content:'';
+  top:0;
+  bottom:0;
+  right:0;
+  width:50%;
+  background: linear-gradient(90deg ,transparent,white);
+  position:absolute;
+  z-index:1;
+  pointer-events:none;
+}
