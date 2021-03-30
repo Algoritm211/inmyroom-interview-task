@@ -8,6 +8,14 @@ type Props = {
 }
 
 const Card:React.FC<Props> = ({product}) => {
+
+  const rating = Math.floor(product.rating)
+  let RatingBlock: Array<JSX.Element> = []
+
+  for (let i = 0; i < rating; i++) {
+    RatingBlock.push(<i className="fas fa-star" />)
+  }
+
   return (
     <div className={'card'}>
       <div className="card__image">
@@ -17,8 +25,8 @@ const Card:React.FC<Props> = ({product}) => {
         {product.name}
       </div>
       <div className="card__content">
-        <div className="card__content__cell gray">
-          {product.rating}
+        <div className="card__content__cell rating gray">
+          {RatingBlock}
         </div>
         <div className="card__content__cell">
           {product.price.toLocaleString('ru-RU')} ₽
@@ -36,7 +44,7 @@ const Card:React.FC<Props> = ({product}) => {
           <span className={'fadeout'}>{product.mechanism}</span>
         </div>
         <div className="card__content__cell gray">
-          {product.merchant}
+          <a href="#">{product.merchant}</a>
         </div>
       </div>
       <div className="card__buttons">

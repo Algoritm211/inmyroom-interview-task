@@ -20,7 +20,6 @@ code {
   padding: 0;
   margin: 0;
   border: 0;
-  box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
 }
 *,*:before,*:after{
@@ -29,7 +28,7 @@ code {
   box-sizing: border-box;
 }
 :focus,:active{outline: none;}
-a:focus,a:active{outline: none;}
+/*a:focus,a:active{outline: none;}*/
 
 nav,footer,header,aside{display: block;}
 
@@ -48,8 +47,8 @@ input,button,textarea{font-family:inherit;}
 input::-ms-clear{display: none;}
 button{cursor: pointer;}
 button::-moz-focus-inner {padding:0;border:0;}
-a, a:visited{text-decoration: none;}
-a:hover{text-decoration: none;}
+/*a, a:visited{text-decoration: none;}*/
+/*a:hover{text-decoration: none;}*/
 ul li{list-style: none;}
 img{vertical-align: top;}
 
