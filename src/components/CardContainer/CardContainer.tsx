@@ -4,20 +4,30 @@ import BlankCard from "../Card/BlankCard";
 import './CardContainer.scss'
 import {observer} from "mobx-react-lite";
 import ProductsStore from '../../store/productStore'
+import Loader from "../Loader/Loader";
 
 const CardContainer:React.FC = () => {
 
-  const {page, allProducts, loadProducts, isLoading} = ProductsStore
+  const {page, allProducts, loadProducts, isLoading, _productsWithPages} = ProductsStore
   const containerRef = useRef<HTMLDivElement>(null)
   const [isScrollFetching, setIsScrollFetching] = useState(false)
 
 
   useEffect(() => {
-    loadProducts()
+    loadProducts(page)
   }, [])
 
   useEffect(() => {
     setIsScrollFetching(false)
+  }, [isScrollFetching])
+
+  useEffect(() => {
+    if (isScrollFetching && !isLoading) {
+      if (_productsWithPages.length > page + 1) {
+        setIsScrollFetching(false)
+        loadProducts(page + 1)
+      }
+    }
   }, [isScrollFetching])
 
 
@@ -32,10 +42,8 @@ const CardContainer:React.FC = () => {
     if (containerRef.current !== null) {
       if ((event.target.documentElement.scrollLeft + window.innerWidth > containerRef.current.scrollWidth - 200) && !isScrollFetching && !isLoading) {
         setIsScrollFetching(true)
-        console.log('loading');
       }
     }
-    // console.log(containerRef.current?.scrollWidth, event.target.documentElement.scrollLeft + window.innerWidth)
   }
 
   const productBlock = allProducts.map((product,) => {
@@ -46,6 +54,7 @@ const CardContainer:React.FC = () => {
     <div className={'cardContainer'} ref={containerRef}>
       <BlankCard />
       {productBlock}
+      {isLoading && <Loader />}
     </div>
   );
 };

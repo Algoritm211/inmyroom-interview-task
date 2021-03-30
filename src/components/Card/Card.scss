@@ -10,12 +10,16 @@
   //}
 
   &__image {
-    padding: 55px 21px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: #F4F2EE;
     mix-blend-mode: normal;
     border-radius: 10px;
     margin-bottom: 14px;
     margin-right: 10px;
+    width: 183px;
+    height: 180px;
   }
 
   &__title {
@@ -23,12 +27,15 @@
     font-size: 12px;
     line-height: 15px;
     margin-bottom: 18px;
+    overflow: hidden;
+    height: 30px;
   }
 
   &__content {
     display: flex;
     flex-direction: column;
     margin-bottom: 16px;
+    min-width: 204px;
 
     &__cell {
       display: flex;
@@ -45,7 +52,7 @@
     }
 
     &.blank {
-      margin-top: 256px;
+      margin-top: 242px;
       font-weight: 800;
     }
   }
@@ -53,7 +60,7 @@
   &__buttons {
     padding: 0 9px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 
     div {
       display: flex;

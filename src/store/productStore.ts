@@ -13,7 +13,7 @@ class ProductsStore {
       {
         id: 1,
         photo: SofaImg,
-        name: 'Тумба прикроватная Rubus с двумя ящиками',
+        name: 'Тумба прикроватная',
         rating: 5,
         price: 56723,
         color: 'Черный',
@@ -176,7 +176,7 @@ class ProductsStore {
         material: 'Ткань',
         size: 'ш.349 Х в.234 Х г.323',
         mechanism: 'Французская раскладушка',
-        merchant: 'Laska Family',
+        merchant: 'Garda',
         isLiked: false,
         inBasket: false
       },
@@ -191,12 +191,12 @@ class ProductsStore {
   }
 
   @action
-  loadProducts = async () => {
-    this.page += 1
+  loadProducts = async (page: number) => {
+    this.page = page
     this.isLoading = true
     await sleep(3000)
     runInAction(() => {
-      this.allProducts.push(...this._productsWithPages[this.page - 1])
+      this.allProducts.push(...this._productsWithPages[this.page])
       this.isLoading = false
     })
   }
