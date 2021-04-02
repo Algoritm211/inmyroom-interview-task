@@ -201,6 +201,49 @@ class ProductsStore {
     })
   }
 
+  @action
+  setProductLiked = (id: number) => {
+    this.allProducts = this.allProducts.map((product) => {
+      if (product.id === id) {
+        product.isLiked = true
+        return product
+      }
+      return product
+    })
+  }
+
+  @action
+  setProductUnliked = (id: number) => {
+    this.allProducts = this.allProducts.map((product) => {
+      if (product.id === id) {
+        product.isLiked = false
+        return product
+      }
+      return product
+    })
+  }
+
+  @action
+  setProductToCart = (id: number) => {
+    this.allProducts = this.allProducts.map((product) => {
+      if (product.id === id) {
+        product.inBasket = true
+        return product
+      }
+      return product
+    })
+  }
+
+  @action
+  removeProductFromCart = (id: number) => {
+    this.allProducts = this.allProducts.map((product) => {
+      if (product.id === id) {
+        product.inBasket = false
+        return product
+      }
+      return product
+    })
+  }
 
 }
 

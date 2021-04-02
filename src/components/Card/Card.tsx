@@ -2,6 +2,7 @@ import React from 'react';
 import SofaImg from  '../../assets/sofa.png'
 import './Card.scss'
 import {IProduct} from "../../types/types";
+import ProductStore from '../../store/productStore'
 
 type Props = {
   product: IProduct
@@ -9,11 +10,29 @@ type Props = {
 
 const Card:React.FC<Props> = ({product}) => {
 
+  const {setProductLiked, setProductUnliked, setProductToCart, removeProductFromCart} = ProductStore
+
   const rating = Math.floor(product.rating)
   let RatingBlock: Array<JSX.Element> = []
 
   for (let i = 0; i < rating; i++) {
     RatingBlock.push(<i className="fas fa-star" />)
+  }
+
+  const onBuy = () => {
+    setProductToCart(product.id)
+  }
+
+  const onRemoveFromCart = () => {
+    removeProductFromCart(product.id)
+  }
+
+  const onLike = () => {
+    setProductLiked(product.id)
+  }
+
+  const onUnlike = () => {
+    setProductUnliked(product.id)
   }
 
   return (
@@ -48,13 +67,27 @@ const Card:React.FC<Props> = ({product}) => {
         </div>
       </div>
       <div className="card__buttons">
-        <div className="card__buttons-like">
-          <i className="far fa-heart" />
-        </div>
-        <div className="card__buttons-buy">
-          <i className="fas fa-shopping-cart"/>
-          Купить
-        </div>
+        {!product.isLiked ? (
+          <div className="card__buttons-like" onClick={onLike}>
+            <i className="far fa-heart" />
+          </div>
+        ) : (
+          <div className="card__buttons-like" onClick={onUnlike}>
+            <i className="fas fa-heart-broken" />
+          </div>
+        )}
+        {!product.inBasket ? (
+          <div className="card__buttons-buy" onClick={onBuy}>
+            <i className="fas fa-shopping-cart"/>
+            Купить
+          </div>
+        ) : (
+          <div className="card__buttons-buy" onClick={onRemoveFromCart}>
+            <i className="fas fa-trash-alt"/>
+            Удалить
+          </div>
+        )}
+
       </div>
     </div>
   );
