@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/inmyroom-interview-task/static/css/main.7264caa1.chunk.css",
+    "main.js": "/inmyroom-interview-task/static/js/main.f202a241.chunk.js",
+    "main.js.map": "/inmyroom-interview-task/static/js/main.f202a241.chunk.js.map",
+    "runtime-main.js": "/inmyroom-interview-task/static/js/runtime-main.7a66f900.js",
+    "runtime-main.js.map": "/inmyroom-interview-task/static/js/runtime-main.7a66f900.js.map",
+    "static/js/2.62de1c0a.chunk.js": "/inmyroom-interview-task/static/js/2.62de1c0a.chunk.js",
+    "static/js/2.62de1c0a.chunk.js.map": "/inmyroom-interview-task/static/js/2.62de1c0a.chunk.js.map",
+    "static/js/3.f10235e4.chunk.js": "/inmyroom-interview-task/static/js/3.f10235e4.chunk.js",
+    "static/js/3.f10235e4.chunk.js.map": "/inmyroom-interview-task/static/js/3.f10235e4.chunk.js.map",
+    "index.html": "/inmyroom-interview-task/index.html",
+    "static/css/main.7264caa1.chunk.css.map": "/inmyroom-interview-task/static/css/main.7264caa1.chunk.css.map",
+    "static/js/2.62de1c0a.chunk.js.LICENSE.txt": "/inmyroom-interview-task/static/js/2.62de1c0a.chunk.js.LICENSE.txt",
+    "static/media/sofa.15e75bd3.png": "/inmyroom-interview-task/static/media/sofa.15e75bd3.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7a66f900.js",
+    "static/js/2.62de1c0a.chunk.js",
+    "static/css/main.7264caa1.chunk.css",
+    "static/js/main.f202a241.chunk.js"
+  ]
+}
